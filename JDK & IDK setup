@@ -1,8 +1,36 @@
+
 Install JDK
-https://www.oracle.com/java/technologies/javase-downloads.html
 
-Add JAVA_HOME and update the PATH environment variables.
+Download JDK:
 
-Verify installation:
+Go to Oracle or AdoptOpenJDK.
+
+Download the appropriate JDK version for your operating system.
+
+
+Install JDK:
+
+Run the installer and follow the prompts.
+
+
+Set Up Environment Variables:
+
+On Windows:
+
+1. Set JAVA_HOME to your JDK installation path.
+
+
+2. Add JAVA_HOME\bin to the system's PATH variable.
+
+
+
+On macOS/Linux: Add the following to your shell configuration file (.bashrc, .zshrc, etc.):
+
+export JAVA_HOME=/path/to/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+Verify Installation: Run the following command in your terminal:
 
 java -version
+javac -version
