@@ -1,3 +1,13 @@
-
+https://www.oracle.com/java/technologies/javase-downloads.html
 export JAVA_HOME=/path/to/jdk
 export PATH=$JAVA_HOME/bin:$PATH
+
+https://www.jetbrains.com/idea/
+https://www.eclipse.org/
+https://netbeans.apache.org/
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Online quiz system!");
+    }
+}
