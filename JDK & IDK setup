@@ -1,1 +1,8 @@
+Install JDK
+https://www.oracle.com/java/technologies/javase-downloads.html
 
+Add JAVA_HOME and update the PATH environment variables.
+
+Verify installation:
+
+java -version
