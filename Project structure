@@ -1,1 +1,20 @@
-
+OnlineQuizSystem/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── com.quiz/                     // Main package
+│   │   │   │   ├── App.java                 // Entry point
+│   │   │   │   ├── model/                   // Quiz-related models (e.g., Question, User)
+│   │   │   │   ├── service/                 // Logic/Services (e.g., QuizService, UserService)
+│   │   │   │   └── dao/                     // Data Access Layer
+│   │   │   └── utils/                       // Utility classes (e.g., Validation, Randomization)
+│   │   └── resources/                       // Configuration/Static resources
+│   └── test/
+│       ├── java/
+│       │   ├── com.quiz/                    // Test cases for Quiz System
+│       └── resources/
+│
+├── lib/                                     // External libraries (if not using Maven/Gradle)
+├── build.gradle / pom.xml                   // Build tool configuration
+└── README.md                                // Project documentation
