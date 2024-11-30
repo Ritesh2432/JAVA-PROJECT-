@@ -1,29 +1,3 @@
-1. Install JDK
-
-Download JDK:
-
-https://adoptopenjdk.net/
-Install JDK:
-
-Run the installer and follow the prompts.
-Set Up Environment Variables:
-
-On Windows:
-
-1. Set JAVA_HOME to your JDK installation path.
-
-
-2. Add JAVA_HOME\bin to the system's PATH variable.
-
-
-
-On macOS/Linux: Add the following to your shell configuration file (.bashrc, .zshrc, etc.):
-
+https://www.oracle.com/java/technologies/javase-downloads.html
 export JAVA_HOME=/path/to/jdk
 export PATH=$JAVA_HOME/bin:$PATH
-
-
-Verify Installation: Run the following command in your terminal:
-
-java -version
-javac -version
