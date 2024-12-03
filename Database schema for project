@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Options (
     FOREIGN KEY (QuestionID) REFERENCES Questions(QuestionID) ON DELETE CASCADE
 );
 
--- Step 6: Create the UserQuizResponses table
+
 CREATE TABLE IF NOT EXISTS UserQuizResponses (
     ResponseID INT AUTO_INCREMENT PRIMARY KEY,
     UserID INT NOT NULL,
