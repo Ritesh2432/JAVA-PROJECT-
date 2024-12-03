@@ -1,8 +1,5 @@
--- Step 1: Create the database
-CREATE DATABASE IF NOT EXISTS OnlineQuizSystem;
-USE OnlineQuizSystem;
 
--- Step 2: Create the Users table
+
 CREATE TABLE IF NOT EXISTS Users (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
     Username VARCHAR(50) NOT NULL UNIQUE,
@@ -13,7 +10,6 @@ CREATE TABLE IF NOT EXISTS Users (
     CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Step 3: Create the Quizzes table
 CREATE TABLE IF NOT EXISTS Quizzes (
     QuizID INT AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(100) NOT NULL,
@@ -23,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Quizzes (
     FOREIGN KEY (CreatedBy) REFERENCES Users(UserID) ON DELETE CASCADE
 );
 
--- Step 4: Create the Questions table
+
 CREATE TABLE IF NOT EXISTS Questions (
     QuestionID INT AUTO_INCREMENT PRIMARY KEY,
     QuizID INT NOT NULL,
@@ -31,7 +27,6 @@ CREATE TABLE IF NOT EXISTS Questions (
     FOREIGN KEY (QuizID) REFERENCES Quizzes(QuizID) ON DELETE CASCADE
 );
 
--- Step 5: Create the Options table
 CREATE TABLE IF NOT EXISTS Options (
     OptionID INT AUTO_INCREMENT PRIMARY KEY,
     QuestionID INT NOT NULL,
