@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Quiz System</h1>
+        <div id="quiz">
+            <!-- Quiz content will be injected here by JavaScript -->
+        </div>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Quiz Questions and Options
+        const quizData = [
+            {
+                question: "What is the capital of France?",
+                options: ["Berlin", "Madrid", "Paris", "Rome"],
+                answer: 2 // Index of the correct answer
+            },
+            {
+                question: "Which language is used for web development?",
+                options: ["Python", "Java", "HTML", "C++"],
+                answer: 2
+            },
+            {
+                question: "What is 5 + 3?",
+                options: ["6", "7", "8", "9"],
+                answer: 2
+            },
+            {
+                question: "Who is known as the father of computers?",
+                options: ["Charles Babbage", "Alan Turing", "Ada Lovelace", "John von Neumann"],
+                answer: 0
+            },
+            {
+                question: "What is the boiling point of water in Celsius?",
+                options: ["50°C", "100°C", "120°C", "150°C"],
+                answer: 1
+            }
+        ];
+
+        // Render Quiz
+        const quizContainer = document.getElementById("quiz");
+        quizData.forEach((q, index) => {
+            const questionDiv = document.createElement("div");
+            questionDiv.className = "question";
+            questionDiv.innerHTML = `
+                <h2>Q${index + 1}: ${q.question}</h2>
+                <div class="options">
+                    ${q.options
+                        .map(
+                            (option, i) =>
+                                `<label><input type="radio" name="q${index}" value="${i}"> ${option}</label>`
+                        )
+                        .join("")}
+                </div>
+            `;
+            quizContainer.appendChild(questionDiv);
+        });
+
+        // Submit Quiz
+        function submitQuiz() {
+            let score = 0;
+            quizData.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selected && parseInt(selected.value) === q.answer) {
+                    score++;
+                }
+            });
+            document.getElementById("result").innerText = `Your score is: ${score} / ${quizData.length}`;
+        }
+    </script>
+</body>
+</html>
